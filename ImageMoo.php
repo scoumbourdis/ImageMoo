@@ -1,7 +1,19 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
 /*
- * Image_Moo library
+ * ImageMoo library
  *
+ * A forked version of Image_Moo library
+ * 
+ * @author		John Skoumbourdis, author of Grocery CRUD
+ *  
+ * As per MIT license all the below copyright comments will need to remain untouched as we need to provide the 
+ * original author of the library. Thanks Matthew by the way for the great library :)
+ *
+ * Please remain the below untouched, from here... 
+ * ---------------------------------
+ * 
+ * Image_Moo library
+ * 
  * Written due to image_lib not being so nice when you have to do multiple things to a single image!
  *
  * @license		MIT License -
@@ -9,18 +21,19 @@
  * @link		http://www.dps.uk.com http://www.matmoo.com
  * @docu		http://todo :)
  * @email		matthew@dps.uk.com
- *
- * @file		image_moo.php
- * @version		1.1.6
  * @date		2014 Feb 5
  *
  * Copyright (c) 2011-2014 Matthew (Mat-Moo.com) Augier
  *
  * Requires PHP 5 and GD2!
+ * 
+ * ---------------------------------
+ * to here... 
+ *
  *
  * Example usage
- *    $this->image_moo->load("file")->resize(64,40)->save("thumb")->resize(640,480)->save("medium");
- *    if ($this->image_moo->errors) print $this->image_moo->display_errors();
+ *    $this->ImageMoo->load("file")->resize(64,40)->save("thumb")->resize(640,480)->save("medium");
+ *    if ($this->ImageMoo->errors) print $this->ImageMoo->display_errors();
  *
  * COLOURS!
  * Any function that can take a colour as a parameter can take "#RGB", "#RRGGBB" or an array(R,G,B)
@@ -73,7 +86,7 @@
  *
  */
 
-class Image_moo
+class ImageMoo
 {
 	// image vars
 	private $main_image = "";
@@ -106,7 +119,6 @@ class Image_moo
 	// create stuff here as needed
 	//----------------------------------------------------------------------------------------------------------
 	{
-		log_message('debug', "Image Moo Class Initialized");
 		if ($this->jpeg_ignore_warnings) $this->ignore_jpeg_warnings();
 		if ($this->can_stretch) $this->can_stretch(TRUE);
 	}
@@ -163,7 +175,7 @@ class Image_moo
 
 	public function check_gd()
 	//----------------------------------------------------------------------------------------------------------
-	// verification util to see if you can use image_moo
+	// verification util to see if you can use ImageMoo
 	//----------------------------------------------------------------------------------------------------------
 	{
 		// is gd loaded?
@@ -1387,5 +1399,4 @@ class Image_moo
 	}
 
 }
-/* End of file image_moo.php */
-/* Location: /application/libraries/image_moo.php */
+
